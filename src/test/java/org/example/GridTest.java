@@ -48,6 +48,7 @@ public class GridTest {
 //
 //        boolean cellState = grid[row][col];
 //        assertEquals(true, cellState, "Cell at (" + row + "," + col + ") should be alive.");
+        //Improved Code way
         Grid grid = new Grid(5,5);
         grid.setCellState(3,4, true);
         assertTrue(grid.getCellSate(3, 4));
@@ -63,8 +64,8 @@ public class GridTest {
     )
     public void testSetGridCellState(int row, int col){
         Grid grid = new Grid(5,5);
-        grid.setCellState(3,4, true);
-        assertTrue(grid.getCellSate(3, 4));
+        grid.setCellState(row,col, true);
+        assertTrue(grid.getCellSate(row, col));
     }
 
 }
