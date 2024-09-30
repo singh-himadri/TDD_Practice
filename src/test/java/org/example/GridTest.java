@@ -68,4 +68,24 @@ public class GridTest {
         assertTrue(grid.getCellSate(row, col));
     }
 
+    @DisplayName("Should check if the given cell is within the grid")
+    @Test
+    public void testIsCellWithinGrid() {
+        Grid grid = new Grid(5, 5);
+        assertTrue(grid.isCellWithinGrid(0, 0));
+        assertTrue(grid.isCellWithinGrid(4, 4));
+        assertFalse(grid.isCellWithinGrid(5, 5));
+        assertFalse(grid.isCellWithinGrid(-1, 0));
+        assertFalse(grid.isCellWithinGrid(0, -1));
+    }
+    @DisplayName("Should check if the given cell is outside the grid")
+    @Test
+    public void testIsCellOutsideGrid(){
+        Grid grid = new Grid(5,5);
+        assertFalse(grid.isCellWithinGrid(5, 5));
+        assertFalse(grid.isCellWithinGrid(-1, 0));
+        assertFalse(grid.isCellWithinGrid(0, -1));
+        assertFalse(grid.isCellWithinGrid(6, 4));
+        assertFalse(grid.isCellWithinGrid(4, 6));
+    }
 }

@@ -1,7 +1,6 @@
 package org.example;
 
 public class Grid {
-
     private int rows;
     private int cols;
     private boolean state;
@@ -32,5 +31,9 @@ public class Grid {
 
     public void setCellState(int row, int col, boolean newState) {
         state = newState;
+    }
+
+    public boolean isCellWithinGrid(int row, int col) {
+        return row >= 0 && row < rows && col >= 0 && col < cols;
     }
 }
